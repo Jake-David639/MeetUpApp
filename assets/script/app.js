@@ -180,77 +180,81 @@ function displayPlaces() {
 
 
 
-      for (var i = 0; i <= 9; i++) {
+      // only want ten results
+    for (i = 0; i <= 9; i++) {
 
-        // console.log(newResult);
-        var name = response.businesses[i].name;
-        // console.log(name);
-        var categories = response.businesses[i].categories[0].title;
-        // console.log(categories);
-        var address = response.businesses[i].location.display_address;
-        // console.log(address);
-        var display_phone = response.businesses[i].display_phone;
-        // console.log(display_phone);
-        var price = response.businesses[i].price;
-        // console.log(price);
-        var rating = response.businesses[i].rating;
-        // console.log(rating);
-        var review_count = response.businesses[i].review_count;
-        // console.log(review_count);
-        var image_url = response.businesses[i].image_url;
-        // var myImage = $('<img>').attr('src', image_url);
+      // console.log(newResult);
+      let name = response.businesses[i].name;
+      // console.log(name);
+      let categories = response.businesses[i].categories[0].title;
+      // console.log(categories);
+      let address = response.businesses[i].location.display_address[0];
+      let zipcode = response.businesses[i].location.display_address[1];
+      // console.log(address);
+      let display_phone = response.businesses[i].display_phone;
+      // console.log(display_phone);
+      let price = response.businesses[i].price;
+      // console.log(price);
+      let rating = response.businesses[i].rating;
+      // console.log(rating);
+      let review_count = response.businesses[i].review_count;
+      // console.log(review_count);
+      let image_url = response.businesses[i].image_url;
 
+      let myImage = $('<img>').attr('src', image_url);
 
+      console.log(image_url);
 
+        let logo = "./assets/images/Yelp_trademark_RGB_outline.png";
+      let myStars;
 
-
-        var myStars;
-
-        if (rating === 5) {
-          // <img src="" value=>
+      switch (rating) {
+        case 5:
           myStars = "./assets/images/small_5@2x.png";
-        }
-        else if (rating === 4.5) {
+          break;
+        case 4.5:
           myStars = "./assets/images/small_4_half@2x.png";
-        }
-
-        else if (rating === 4) {
+          break;
+        case 4:
           myStars = "./assets/images/small_4@2x.png";
-        }
-        else if (rating === 3.5) {
+          break;
+        case 3.5:
           myStars = "./assets/images/small_3_half@2x.png";
-        }
-
-
-        else if (rating === 3) {
+          break;
+        case 3:
           myStars = "./assets/images/small_3@2x.png";
-        }
-        else if (rating === 2.5) {
+          break;
+        case 2.5:
           myStars = "./assets/images/small_2_half@2x.png";
-        }
-        else if (rating === 2) {
+          break;
+        case 2:
           myStars = "./assets/images/small_2@2x.png";
-        }
-        else if (rating === 1.5) {
+          break;
+        case 1.5:
           myStars = "./assets/images/small_1_half@2x.png";
-        }
-        else if (rating === 1) {
+          break;
+        case 1:
           myStars = "./assets/images/small_1@2x.png";
-        } else {
+          break;
+        default:
           myStars = "";
-        }
+      };
+
+      console.log("hey I am here", myStars);
 
 
 
-        var newResult = $("<div class='results' data-attr='" + i + "'>").html(
-          "<img class='pic' src='" + image_url + "'/>" +
-          "<h3>" + (i + 1) + ". " + name + "</h3>" +
-          "<h4 class='cat'>" + categories + "</h4>" +
-          "<h4>" + address + "</h4>" +
-          "<h4>" + display_phone + "</h4>" +
-          "<h4>" + price + "</h4>" +
-          "<h4>" + rating + "</h4> <img src='" + myStars + "'/>" +
-          "<h4> Reviews: " + review_count + "</h4>")
+        let newResult = $("<div data-attr='" + i + "'>").html(
+          "<h3>" + (i + 1)+ ". " + name + "</h3> " +
+          "</h4> <img class='picture' src='" + image_url + "'/>" +
+          "<h5 class='cat'>" + categories +
+          "<h6>" + address + "</h6>" +
+          "<h6>" + zipcode + "</h6>" +
+          "<h6 class='phone'>" + "<i class='fas fa-phone'></i>" + display_phone + "</h6>" +
+          "<h6 class='price'>" + price +  "</h6>" +
+          "</h6> <img class='rate' src='" + myStars + "'>" +
+          "<h6 class='review'>" + review_count + " reviews" + " " + "<img class='logo' src='" + logo + "'>" + "</h6>"
+          )
 
 
 

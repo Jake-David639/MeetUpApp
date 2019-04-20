@@ -19,4 +19,4 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 
 
 
-var marker = L.marker([, ]).addTo(mymap);
+//var marker = L.marker([, ]).addTo(mymap);

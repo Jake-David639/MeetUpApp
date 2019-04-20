@@ -13,7 +13,7 @@
 }
 
 #signed-in {
-    display: ;
+    display: none;
 }
 
 #greeting {
@@ -56,22 +56,16 @@ form {
 
       height: 550px;
       overflow-y: auto;
-      border: gray;
-      width: 700px;
+    
   }
   .picture{
-      height: 100px;
-      width: 100px;
+      height: 150px;
+      width: 150px;
       float: right;
       background-size:cover;
       margin: 0 0 15px 15px;
       background: #eeeeee;
      
-  }
-
-  .rate{
-      width: 104px;
-      height: 17px;
   }
 
   h3{
@@ -94,10 +88,7 @@ font-size: 0px;
  .review{
      font-size: 10px;
  }
- div{
-border-bottom: 0.5px solid rgb(196, 207, 211);
-background: whitesmoke;
- }
+ 
  .logo{
      width: 50px;
      height: 45px;
