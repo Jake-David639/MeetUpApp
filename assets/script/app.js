@@ -1,5 +1,5 @@
 console.log('testing, hi this is the correct js file :)')
-
+//MEET UP APP - WHAT WAS PRESENTED
 
 // materialize - text input styling initialize
 $(document).ready(function () {
