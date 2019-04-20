@@ -181,7 +181,7 @@ function displayPlaces() {
 
 
       // only want ten results
-    for (i = 0; i <= 9; i++) {
+    for (i = 0; i <= 20; i++) {
 
       // console.log(newResult);
       let name = response.businesses[i].name;
