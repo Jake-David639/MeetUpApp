@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Squadron - Meet Your Friends in the Middle!</title>
+
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
     <!-- RESET CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+    <!-- bootstrap for firechat -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- MATERIALIZE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,9 +23,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- LEAFLET MAPS CSS -->
     <link rel="stylesheet" href="leaflet/leaflet.css" />
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
     <!-- FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -22,35 +33,47 @@
     <!-- Firechat -->
     <link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
     <script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
+
    
     <!--FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> 
 
+
 </head>
+
 <body>
     <nav>
         <div class="nav-wrapper cyan darken-1">
-            <a href="#!" class="brand-logo">Squadron</a>
+            <a href="https://tpgaviria.github.io/MeetUpApp/" class="brand-logo">Squadron</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="one.html">About</a></li>
-                <li><a href="two.html">Find Friends</a></li>
-                <!-- Modal Trigger -->
-                <li><a class="modal-trigger" href="#modal1">Create Account</a></li>
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4>Create Account</h4>
-                        <div id="firebaseui-auth-container"></div>
-                        <div id="loader">Loading...</div>
+
+
+            <div>
+
+                <ul class="right hide-on-med-and-down">
+              
+                    <!-- Modal Trigger -->
+                    <li><a class="modal-trigger" href="#modal2">Chat</a></li>
+
+                    <!-- Modal Structure -->
+                    <div id="modal2" class="modal">
+                        <div class="modal-content">
+                            <h4>Chat</h4>
+
+                            <div id="firechat-wrapper">
+                                <button onclick="login('google');">Login with Google to Chat</button>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
-                </div>
-                <!-- <li><a href="three.html">Create Account</a></li> -->
-                <li><a href="four.html">Sign In</a></li>
-            </ul>
+                   
+                </ul>
+
+
+
+            </div>
+
+
         </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
@@ -67,11 +90,11 @@
                 <form>
                     <div class="input-field col s12">
                         <input type="search" class="place-search-input" id="location1" />
-                        <label for="address-1">Address 1</label>
+                        <label for="location1">Address 1</label>
                     </div>
                     <div class="input-field col s12">
-                        <input type="search" class="place-search-input" id="location2" />
-                        <label for="address-2">Address 2</label>
+                        <input type="search" class="place-search-input2" id="location2" />
+                        <label for="location2">Address 2</label>
                     </div>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Find Middle Point
                         <i class="material-icons right">send</i>
@@ -81,63 +104,32 @@
         </div>
         <div class="row">
             <div class="col s12 m12">
-                <div id="instructions">
+                <div class="bottom-panel">
 
-                    <p>Directions go here:</p>
+                    <div id="instructions">
 
 
-                    <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+                        <h2>Welcome to Squadron!</h2>
+                        <p>Enter two addresses or cities, and we'll give you the perfect middle point between them, and
+                            nearby businesses where you can meet your squad!</p>
+
+                            <p>Choose your spot, and we'll give you directions there.</p>
+
+
                     </div>
-                 
-                    <div id="firechat-wrapper">
-                        <button onclick="login('google');">Login with Google to Chat</button>
-                    </div>
+
+
+
                 </div>
             </div>
         </div>
-        <!-- closes container -->
     </div>
-    <!-- <div class="col s12 m6">
-            <div class="contacts box">
-                
-                <p>If not logged in, benefits of having an account go here.</p>
-                <p>If logged in, display contacts/friends here. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Temporibus eligendi unde harum adipisci. Minima cumque doloribus aliquid eveniet porro earum
-                    architecto et quae accusantium eius nihil repellendus deserunt vero magni consequuntur totam
-                    inventore non accusamus natus pariatur qui laudantium, officia illo? Dolore odit explicabo unde
-                    quasi iste nisi eaque ratione voluptatibus quibusdam qui quam ut quae, quisquam nam itaque ipsum id
-                    accusamus ab asperiores molestias eligendi commodi. Saepe placeat tenetur architecto reprehenderit
-                    voluptatem explicabo error blanditiis quas nulla voluptatibus veritatis ullam temporibus molestiae
-                    veniam rerum eius ut recusandae consequuntur, a earum? Temporibus perferendis animi dicta recusandae
-                    fugit minima veritatis ab ipsam necessitatibus repellendus molestiae, a cupiditate porro earum!
-                    Impedit ipsam, temporibus ab facilis veniam illo. Ullam, voluptate distinctio error sequi harum
-                    voluptas atque nisi nesciunt quasi esse, provident quo natus accusantium cumque reiciendis, fugiat
-                    est dicta! Laboriosam architecto dolorem quibusdam necessitatibus repellendus tenetur recusandae hic
-                    nesciunt sequi excepturi? Tenetur facilis veniam minus sed et enim, molestias eos consequatur
-                    distinctio assumenda placeat. Neque consequatur asperiores accusantium quisquam? Sint voluptate
-                    magnam ipsam, eaque quis excepturi quasi sapiente ex temporibus, nostrum cupiditate necessitatibus
-                    quibusdam. Ipsam itaque animi voluptas ut. Iste cupiditate obcaecati, possimus distinctio nobis
-                    tempore magni, eveniet officiis, quasi ducimus fugiat cumque!</p>
-                    
-                </div>
-            </div> -->
+  
     <footer class="page-footer cyan darken-2">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                        content.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Saved</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Find Friends</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Create Account</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Sign In</a></li>
-                    </ul>
-                </div>
+               
+
             </div>
         </div>
         <div class="footer-copyright">
@@ -152,4 +144,5 @@
     <script src="assets/script/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>

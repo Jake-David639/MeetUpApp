@@ -6,8 +6,22 @@
 .container {
     margin-top: 20px;
     width: 90%;
-    
 }
+
+#no-user {
+    display: none;
+}
+
+#signed-in {
+    display: ;
+}
+
+#greeting {
+    margin-right: 10px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
 
 .map-search {
     border: 1px solid #dddddd;
@@ -39,6 +53,7 @@ form {
   }
 
   .side-panel{
+
       height: 550px;
       overflow-y: auto;
       border: gray;
@@ -90,3 +105,13 @@ background: whitesmoke;
     padding-bottom: 25px;
      
  }
+
+#instructions {
+    color: grey;
+    font-size: 16pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.results:hover {
+    background: #ececec;
+}

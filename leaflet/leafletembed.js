@@ -3,7 +3,7 @@ var map = L.map('map', {
     // Set latitude and longitude of the map center (required)
     center: [33.7756, -84.3963],
     // Set the initial zoom level, values 0-18, where 0 is most zoomed-out (required)
-    zoom: 14
+    zoom: 13
 });
 
 
@@ -16,3 +16,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
     maxZoom: 19
 }).addTo(map);
 
+
+
+
+var marker = L.marker([, ]).addTo(mymap);
