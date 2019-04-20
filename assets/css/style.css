@@ -3,8 +3,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
 .container {
     margin-top: 20px;
     width: 90%;
@@ -42,9 +40,6 @@ form {
     line-height: 30px;
 }
 
-
-
-
 #map {
     /* width: 80%; */
     border-right: 1px solid #dddddd;
@@ -58,31 +53,58 @@ form {
   }
 
   .side-panel{
-    height: 550px;
-    overflow-y: auto;
-}
 
-.pic{
-    height: 150px;
-    width: ;
-    float: right;
-}
+      height: 550px;
+      overflow-y: auto;
+      border: gray;
+      width: 700px;
+  }
+  .picture{
+      height: 100px;
+      width: 100px;
+      float: right;
+      background-size:cover;
+      margin: 0 0 15px 15px;
+      background: #eeeeee;
+     
+  }
 
-h2 {
-    font-size: 22pt;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
+  .rate{
+      width: 104px;
+      height: 17px;
+  }
 
-h3 {
-    font-size: 18px;
-}
+  h3{
+      font-size: 25px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
 
-h4 {
-    font-size: 12px;
-    margin: 3px;
-}
+  .cat{
+      font-size: 15px;
+      font-style: italic;
+  }
+ .price{
+color: green;
+font-style: oblique;
 
+ }
+ .rate{
+font-size: 0px;
+ }
+ .review{
+     font-size: 10px;
+ }
+ div{
+border-bottom: 0.5px solid rgb(196, 207, 211);
+background: whitesmoke;
+ }
+ .logo{
+     width: 50px;
+     height: 45px;
+     float: right;
+    padding-bottom: 25px;
+     
+ }
 
 #instructions {
     color: grey;
